@@ -16,6 +16,8 @@ import AvailableRegionsPage from "./pages/availableRegionsPage";
 import PopularPage from "./pages/popularPage";
 import TVPage from "./pages/tvPage";
 import PopularDetailsPage from "./pages/popularDetailsPage";
+import NowPlayingPage from "./pages/nowPlayingPage";
+import NowAiringPage from "./pages/nowAiringPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -35,6 +37,8 @@ const App = () => {
         <MoviesContextProvider>
           <Routes>
             <Route path="/movies/favorites" element={<FavoriteMoviesPage />} />
+            <Route path="/movies/now_playing" element={<NowPlayingPage />} />
+            <Route path="/tv/now_airing" element={<NowAiringPage />} />
             <Route path="/movies/upcoming" element={<DiscoverPage />} />
             <Route path="/reviews/:id" element={ <MovieReviewPage /> } />
             <Route path="/reviews/form" element={ <AddMovieReviewPage /> } />

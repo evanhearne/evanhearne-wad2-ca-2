@@ -28,6 +28,8 @@ const SiteHeader = ({ history }) => {
   const menuOptions = [
     { label: "Home", path: "/" },
     { label: "Favorites", path: "/movies/favorites" },
+    { label: "Now Playing", path: "/movies/now_playing" },
+    { label: "Now Airing", path: "/tv/now_airing" },
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "TV Shows", path: "/tv" },
     { label: "Regions", path: "/regions" },
