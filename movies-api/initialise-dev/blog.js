@@ -100,3 +100,5 @@ const blogs = [
         content: 'Content 20',
     }
 ];
+
+export default blogs;
