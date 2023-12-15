@@ -4,6 +4,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import usersRouter from './api/users';
+import blogRouter from './api/blog';
 import './db';
 import defaultErrHandler from './errHandler'
 
@@ -16,6 +17,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/movies',authenticate,  moviesRouter);
 app.use('/api/users', usersRouter);
+app.use('/api/blog', blogRouter);
 app.use(defaultErrHandler);
 
 app.listen(port, () => {
