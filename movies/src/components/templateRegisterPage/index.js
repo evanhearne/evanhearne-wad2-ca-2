@@ -16,14 +16,12 @@ const PageTemplate = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         // Add your login logic here
-        axios.post('http://localhost:8080/api/users?action=authenticate', {
+        axios.post('http://localhost:8080/api/users?action=register', {
             "username": username,
             "password": password
         })
             .then((response) => {
-                console.log(response);
-                localStorage.setItem('token', response.data.token);
-                window.location.href = '/home';
+                window.location.href = '/login';
             }, (error) => {
                 console.log(error);
             });
@@ -31,7 +29,7 @@ const PageTemplate = () => {
 
     return (
         <div>
-            <h1>Login Page</h1>
+            <h1>Register Page</h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     Username:
@@ -43,10 +41,10 @@ const PageTemplate = () => {
                     <input type="password" value={password} onChange={handlePasswordChange} />
                 </label>
                 <br />
-                <button type="submit">Login</button>
+                <button type="submit">Register</button>
             </form>
         </div>
     );
-};
+}
 
 export default PageTemplate;
