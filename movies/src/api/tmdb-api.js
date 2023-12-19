@@ -1,14 +1,17 @@
+const bearer_token = localStorage.getItem("token");
+
 export const getMovies = () => {
+  console.log(bearer_token)
   return fetch(
-    `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&include_adult=false&include_video=false&page=1`
-  ).then((response) => {
-    if (!response.ok) {
-      throw new Error(response.json().message);
-    }
+    'http://localhost:8080/api/movies', {
+      method: "GET",
+    headers: { 'Authorization': `${bearer_token}` }
+  }).then((response) => {
+    console.log(response);
     return response.json();
-  })
-  .catch((error) => {
-     throw error
+  }
+  ).catch((error) => {
+    console.log(error);
   });
 };
   
@@ -17,15 +20,15 @@ export const getMovie = (args) => {
   const [, idPart] = args.queryKey;
   const { id } = idPart;
   return fetch(
-    `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
-  ).then((response) => {
-    if (!response.ok) {
-      throw new Error(response.json().message);
-    }
+    `http://localhost:8080/api/movie/${id}`, {
+      method: "GET",
+    headers: { 'Authorization': `${bearer_token}` }
+  }).then((response) => {
+    console.log(response);
     return response.json();
   })
   .catch((error) => {
-    throw error
+    console.log(error);
  });
 };
   
