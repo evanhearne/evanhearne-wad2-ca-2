@@ -1,6 +1,7 @@
 import authenticate from './authenticate';
 import moviesRouter from './api/movies';   //import movies router
 import movieRouter from './api/movie';
+import nowPlayingRouter from './api/nowPlaying';
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -18,6 +19,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/movies',authenticate,  moviesRouter);
 app.use('/api/movie', movieRouter);
+app.use('/api/nowPlaying', nowPlayingRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/blog', blogRouter);
 app.use(defaultErrHandler);
