@@ -12,8 +12,6 @@ Name: Evan Hearne
 
 ## Setup requirements.
 
-[ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
-
 A MongoDB instance is required to run either locally or in the cloud for the database functionality. Docker is a great way to set up a local instance. 
 
 ```
